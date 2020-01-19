@@ -122,3 +122,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+
+###############
+# Emacs files #
+###############
+*_flymake.*
+*~
+.\#*
+.mypy_cache/
+\#*
