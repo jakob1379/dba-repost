@@ -9,10 +9,11 @@ import progressbar as Pbar
 import sys
 from getpass import getpass
 
-parser = argparse.ArgumentParser()
+parser = argparse.ArgumentParser(description="""
+dba-repost is a script to repost all ads which are due date from dba.dk""")
 parser.add_argument("-t", "--timeout",
                     help="max time to wait for content to appear in webpage",
-		    metavar="timeout",
+		    metavar="time",
                     type=int,
 		    nargs='?',
                     default=5)
@@ -80,26 +81,26 @@ if __name__ == '__main__':
                 button.click()
 
                 # wait for page to redirect
-                    try:
-                        WebDriverWait(driver, maxDelay).until(
-                            EC.presence_of_element_located((
-                                By.XPATH,
-                                "//div[contains(@id,'listing-owners-toolbox')]")))
-                    except TimeoutException:
-                        print("Max timeout reached!")
-                        sys.exit()
-
-
-            print("Checking for more inactive ads..")
-            driver.get(inactive_ads)
                 try:
                     WebDriverWait(driver, maxDelay).until(
                         EC.presence_of_element_located((
                             By.XPATH,
-                            '/html/body/div[1]/div/div[2]/section/table/tbody')))
+                            "//div[contains(@id,'listing-owners-toolbox')]")))
                 except TimeoutException:
                     print("Max timeout reached!")
                     sys.exit()
+
+
+            print("Checking for more inactive ads..")
+            driver.get(inactive_ads)
+            try:
+                WebDriverWait(driver, maxDelay).until(
+                    EC.presence_of_element_located((
+                        By.XPATH,
+                        '/html/body/div[1]/div/div[2]/section/table/tbody')))
+            except TimeoutException:
+                print("Max timeout reached!")
+                sys.exit()
 
             ads = driver.find_elements_by_xpath(
                 "//a[contains(@data-ga-act,'RepostAdBegin')]")
