@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" role="img" aria-labelledby="t d">
+<title id="t">dba-repost run</title>
+<desc id="d">Three greyed-out inactive dba.dk ads move one at a time into a Firefox window driven by Selenium, the repost button is clicked, and each ad comes out fresh in the reposted column while the console progress bar fills and ends with "Finished reposting 3 ads!".</desc>
+<style>
+:root{--bg:#eaf0f8;--panel:#ffffff;--ink:#16336e;--mid:#5a6e92;--faded:#a3b0c4;--fadedfill:#dde4ee;--mark:#ffd23f;--track:#b7c3d6;--console:#16336e;--consoletext:#eaf0f8}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1c38;--panel:#172a52;--ink:#e4ecf8;--mid:#9fb0cf;--faded:#4a5c80;--fadedfill:#1b2d55;--mark:#ffd23f;--track:#33476f;--console:#081229;--consoletext:#cfdaf0}}
+.bg{fill:var(--bg)}
+.label{font:600 15px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;fill:var(--ink)}
+.sub{font:400 12px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;fill:var(--mid)}
+.mono{font:400 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:var(--consoletext)}
+.track{fill:none;stroke:var(--track);stroke-width:2;stroke-dasharray:2 7;stroke-linecap:round}
+.slot{fill:none;stroke:var(--track);stroke-width:1.5;stroke-dasharray:5 5}
+.win{fill:var(--panel);stroke:var(--ink);stroke-width:2}
+.bar{fill:var(--ink)}
+.dot{fill:var(--bg)}
+.url{font:400 11px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:var(--mid)}
+.btn{fill:var(--ink)}
+.btntext{font:600 12px system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;fill:var(--panel)}
+.ring{fill:none;stroke:var(--mark);stroke-width:3;opacity:0}
+.cursor{fill:var(--panel);stroke:var(--ink);stroke-width:1.5;stroke-linejoin:round}
+.oc{fill:var(--fadedfill);stroke:var(--faded);stroke-width:1.5;stroke-dasharray:4 3}
+.op,.ol{fill:var(--faded)}
+.nc{fill:var(--panel);stroke:var(--ink);stroke-width:2}
+.np{fill:var(--mark)}
+.nl{fill:var(--ink)}
+.nl2{fill:var(--mid)}
+.new{opacity:0}
+.cbox{fill:var(--console)}
+.pfill{fill:var(--mark)}
+.pbg{fill:none;stroke:var(--consoletext);stroke-opacity:.35;stroke-width:1}
+.fin{opacity:0}
+.slip,.new,.ring,.cursor,.pfill,.fin{animation-duration:12s;animation-iteration-count:infinite;animation-timing-function:cubic-bezier(.55,0,.25,1)}
+.s1{animation-name:m1}.s2{animation-name:m2}.s3{animation-name:m3}
+.s1 .new{animation-name:f1}.s2 .new{animation-name:f2}.s3 .new{animation-name:f3}
+.ring{animation-name:ring;transform-box:fill-box;transform-origin:center}
+.cursor{animation-name:press}
+.pfill{animation-name:prog;transform-box:fill-box;transform-origin:left center}
+.fin{animation-name:fin}
+@keyframes m1{0%{transform:translate(0,0);opacity:1}6%{transform:translate(335px,46px)}13%{transform:translate(335px,46px)}21%,92%{transform:translate(670px,0);opacity:1}95%{transform:translate(670px,0);opacity:0}96%{transform:translate(0,0);opacity:0}100%{transform:translate(0,0);opacity:1}}
+@keyframes m2{0%,30%{transform:translate(0,0);opacity:1}36%{transform:translate(335px,-16px)}43%{transform:translate(335px,-16px)}51%,92%{transform:translate(670px,0);opacity:1}95%{transform:translate(670px,0);opacity:0}96%{transform:translate(0,0);opacity:0}100%{transform:translate(0,0);opacity:1}}
+@keyframes m3{0%,60%{transform:translate(0,0);opacity:1}66%{transform:translate(335px,-78px)}73%{transform:translate(335px,-78px)}81%,92%{transform:translate(670px,0);opacity:1}95%{transform:translate(670px,0);opacity:0}96%{transform:translate(0,0);opacity:0}100%{transform:translate(0,0);opacity:1}}
+@keyframes f1{0%,9.5%{opacity:0}11.5%,95%{opacity:1}96%,100%{opacity:0}}
+@keyframes f2{0%,39.5%{opacity:0}41.5%,95%{opacity:1}96%,100%{opacity:0}}
+@keyframes f3{0%,69.5%{opacity:0}71.5%,95%{opacity:1}96%,100%{opacity:0}}
+@keyframes ring{0%,8.5%{opacity:0;transform:scale(1)}9.5%{opacity:1;transform:scale(1)}12%{opacity:0;transform:scale(1.25,1.6)}12.1%,38.5%{opacity:0;transform:scale(1)}39.5%{opacity:1;transform:scale(1)}42%{opacity:0;transform:scale(1.25,1.6)}42.1%,68.5%{opacity:0;transform:scale(1)}69.5%{opacity:1;transform:scale(1)}72%{opacity:0;transform:scale(1.25,1.6)}72.1%,100%{opacity:0;transform:scale(1)}}
+@keyframes press{0%,8%,10.5%,38%,40.5%,68%,70.5%,100%{transform:translate(0,0)}9%,39%,69%{transform:translate(-3px,-3px)}}
+@keyframes prog{0%,10%{transform:scaleX(0)}13%,40%{transform:scaleX(.3333)}43%,70%{transform:scaleX(.6667)}73%,95%{transform:scaleX(1)}97%,100%{transform:scaleX(0)}}
+@keyframes fin{0%,83%{opacity:0}85%,94%{opacity:1}96%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){
+*{animation:none!important}
+.s1{transform:translate(670px,0)}
+.s1 .new{opacity:1}
+.s2{transform:translate(335px,-16px)}
+.ring{opacity:1}
+.pfill{transform:scaleX(.3333)}
+}
+</style>
+<rect class="bg" x="0" y="0" width="960" height="400" rx="16"/>
+
+<text class="label" x="50" y="62">Inactive ads</text>
+<text class="sub" x="50" y="82">mine-annoncer/inaktive-annoncer</text>
+<text class="label" x="385" y="62">Firefox via Selenium</text>
+<text class="sub" x="385" y="82">opens each repost link, clicks the button</text>
+<text class="label" x="720" y="62">Reposted</text>
+<text class="sub" x="720" y="82">live on dba.dk again</text>
+
+<path class="track" d="M246 130 C 300 130, 320 176, 378 176"/>
+<path class="track" d="M246 192 L 378 176"/>
+<path class="track" d="M246 254 C 300 254, 320 176, 378 176"/>
+<path class="track" d="M582 176 C 640 176, 660 130, 714 130"/>
+<path class="track" d="M582 176 L 714 192"/>
+<path class="track" d="M582 176 C 640 176, 660 254, 714 254"/>
+
+<rect class="slot" x="50" y="104" width="190" height="52" rx="6"/>
+<rect class="slot" x="50" y="166" width="190" height="52" rx="6"/>
+<rect class="slot" x="50" y="228" width="190" height="52" rx="6"/>
+<rect class="slot" x="720" y="104" width="190" height="52" rx="6"/>
+<rect class="slot" x="720" y="166" width="190" height="52" rx="6"/>
+<rect class="slot" x="720" y="228" width="190" height="52" rx="6"/>
+
+<rect class="win" x="375" y="100" width="210" height="182" rx="10"/>
+<path class="bar" d="M385 100 h190 a10 10 0 0 1 10 10 v22 h-210 v-22 a10 10 0 0 1 10 -10 z"/>
+<circle class="dot" cx="390" cy="116" r="3.5"/><circle class="dot" cx="402" cy="116" r="3.5"/><circle class="dot" cx="414" cy="116" r="3.5"/>
+<rect class="dot" x="426" y="108" width="150" height="16" rx="8"/>
+<text class="url" x="436" y="120">www.dba.dk</text>
+<rect class="ring" x="430" y="222" width="100" height="28" rx="14"/>
+<rect class="btn" x="430" y="222" width="100" height="28" rx="14"/>
+<text class="btntext" x="480" y="240" text-anchor="middle">Repost</text>
+
+<g class="slip s3"><g transform="translate(50 228)"><rect class="oc" width="190" height="52" rx="6"/><rect class="op" x="10" y="10" width="32" height="32" rx="3"/><rect class="ol" x="52" y="14" width="110" height="8" rx="4"/><rect class="ol" x="52" y="30" width="70" height="7" rx="3.5"/><g class="new"><rect class="nc" width="190" height="52" rx="6"/><rect class="np" x="10" y="10" width="32" height="32" rx="3"/><rect class="nl" x="52" y="14" width="110" height="8" rx="4"/><rect class="nl2" x="52" y="30" width="70" height="7" rx="3.5"/></g></g></g>
+<g class="slip s2"><g transform="translate(50 166)"><rect class="oc" width="190" height="52" rx="6"/><rect class="op" x="10" y="10" width="32" height="32" rx="3"/><rect class="ol" x="52" y="14" width="110" height="8" rx="4"/><rect class="ol" x="52" y="30" width="70" height="7" rx="3.5"/><g class="new"><rect class="nc" width="190" height="52" rx="6"/><rect class="np" x="10" y="10" width="32" height="32" rx="3"/><rect class="nl" x="52" y="14" width="110" height="8" rx="4"/><rect class="nl2" x="52" y="30" width="70" height="7" rx="3.5"/></g></g></g>
+<g class="slip s1"><g transform="translate(50 104)"><rect class="oc" width="190" height="52" rx="6"/><rect class="op" x="10" y="10" width="32" height="32" rx="3"/><rect class="ol" x="52" y="14" width="110" height="8" rx="4"/><rect class="ol" x="52" y="30" width="70" height="7" rx="3.5"/><g class="new"><rect class="nc" width="190" height="52" rx="6"/><rect class="np" x="10" y="10" width="32" height="32" rx="3"/><rect class="nl" x="52" y="14" width="110" height="8" rx="4"/><rect class="nl2" x="52" y="30" width="70" height="7" rx="3.5"/></g></g></g>
+
+<path class="cursor" d="M518 238 l0 22 l5.5 -5 l4 9 l4 -1.8 l-4 -8.8 l7.5 0 z"/>
+
+<rect class="cbox" x="50" y="304" width="860" height="72" rx="10"/>
+<text class="mono" x="70" y="332">$ python src/main.py</text>
+<text class="mono" x="70" y="356">reposting ads...</text>
+<rect class="pbg" x="230" y="345" width="300" height="14" rx="3"/>
+<rect class="pfill" x="231" y="346" width="298" height="12" rx="2"/>
+<text class="mono fin" x="560" y="356">Finished reposting 3 ads!</text>
+</svg>
